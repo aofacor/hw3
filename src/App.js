@@ -27,7 +27,8 @@ class App extends Component {
     }
   }
 
-shuffle() {this.setState({hand:shuffledDeck().splice(0,5)
+deal() {
+ this.setState({hand:shuffledDeck().splice(0,5)
 
 })
   }
@@ -36,14 +37,14 @@ shuffle() {this.setState({hand:shuffledDeck().splice(0,5)
     let cards = []
     let hand = this.state.hand
     for (let x=0;x<5;x++){
-  [x] = "http://golearntocode.com/images/cards/" + hand[x] +".png"
+  [x] = "http://golearntocode.com/images/cards/" + this.state.hand[x] +".png"
   cards.push(cards[x])
 }
     ;
     return (
       <div className="App">
    <img src= {cards[0]} /> <img src= {cards[1]} /> <img src= {cards[2]} /> <img src= {cards[3]} /> <img src= {cards[4]} />
-        <p><button onClick={() => this.shuffle()}>Deal a new hand</button></p>
+        <p><button onClick={()=>  this.deal()}>Deal a new hand</button></p>
       </div>
     );
   }

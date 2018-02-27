@@ -25,10 +25,9 @@ class App extends Component {
     super();
     this.state = {hand: ["face_down", "face_down", "face_down", "face_down", "face_down"]
     }
+  }
 
-shuffle(){this.setState({hand:suffledDeck().splice(0,5)
-
-})
+shuffle() {this.setState({hand:shuffledDeck().splice(0,5)})
 
 
   }
